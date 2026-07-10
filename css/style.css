@@ -1,6 +1,68 @@
+html {
+    overflow-x: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     /*font-family: 'Open Sans';*/
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    color: #333;
+    line-height: 1.58;
+    overflow-x: hidden;
+}
+
+.section {
+    padding: 2.4rem 1.5rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.2rem;
+}
+
+.column {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.column.is-2_5 {
+    flex: 0 0 220px;
+    width: 220px;
+}
+
+.right-panel {
+    max-width: 820px;
+}
+
+.content h2 {
+    font-size: 1.45rem;
+    font-weight: 650;
+    margin-top: 2.1rem;
+    margin-bottom: 0.9rem;
+    color: #222;
+}
+
+.content p {
+    margin-bottom: 0.85rem;
+}
+
+.content ul {
+    margin-top: 0.35rem;
+    margin-left: 1.1rem;
+}
+
+.content li {
+    margin-bottom: 0.32rem;
 }
 
 .menu-list a.is-active {
@@ -36,12 +98,46 @@ body {
 }
 
 img.img-logo {
-    height: auto; 
+    height: auto;
     width: 11em;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .column.is-3 {
-    margin: auto;
+    flex: 0 0 165px;
+    width: 165px;
+    margin: 0;
+    color: #555;
+    white-space: nowrap;
+}
+
+article.columns {
+    gap: 1.6rem;
+    margin-bottom: 1.55rem;
+}
+
+.role {
+    margin-bottom: 0.15rem;
+}
+
+.meta {
+    color: #555;
+    margin-bottom: 0.4rem;
+}
+
+.date {
+    float: right;
+    margin-left: 1rem;
+    color: #555;
+    white-space: nowrap;
+}
+
+.resume-list > li {
+    margin-bottom: 0.9rem;
 }
 
 /* https://pytorch.org/assets/brand-guidelines/PyTorch-Brand-Guidelines.pdf */
@@ -52,3 +148,92 @@ a:active { color: rgb(238, 76, 44) }
 .social a:hover svg{transform: scale(1.5);}
 .dark{color: #4a4a4a!important;}
 .dark:hover{color: #4a4a4a!important;}
+
+@media screen and (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .section {
+        padding: 1.5rem 1rem;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    .columns {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .column.is-2_5 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-basis: auto !important;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .column {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .sticky {
+        position: static;
+    }
+
+    .right-panel {
+        max-width: calc(100vw - 2rem) !important;
+        width: calc(100vw - 2rem) !important;
+    }
+
+    .content {
+        overflow-wrap: normal;
+        word-break: normal;
+        width: calc(100vw - 2rem) !important;
+        max-width: calc(100vw - 2rem) !important;
+    }
+
+    .content p,
+    .content li,
+    .content h2 {
+        width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .content a {
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    article.columns {
+        display: block;
+        margin-bottom: 1.35rem;
+    }
+
+    .column.is-3 {
+        width: auto;
+        margin-bottom: 0.25rem;
+    }
+
+    .date {
+        float: none;
+        display: block;
+        margin-left: 0;
+    }
+}
